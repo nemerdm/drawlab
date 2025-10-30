@@ -1,0 +1,782 @@
+/* ------------------------------------------------------------------- */
+/* 1. ZMIENNE KOLORYSTYCZNE I SYSTEM MOTYWÓW
+/* ------------------------------------------------------------------- */
+:root {
+    --bg-color: #0D0D0D;
+    --text-color: #E5E7EB;
+    --text-secondary-color: #9CA3AF;
+    --card-bg: rgba(23, 23, 23, 0.5);
+    --card-bg-hover: rgba(23, 23, 23, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(13, 13, 13, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gradient-main: linear-gradient(to right, #ec4899, #8b5cf6, #f97136);
+    --gradient-hover: linear-gradient(to right, #8b5cf6, #f97136);
+    --footer-bg: #1C1C1C;
+    --footer-text: #6B7280;
+    --project-overlay-bg: rgba(13, 13, 13, 0.8);
+    --logo-color: #FFFFFF;
+    --social-icon-color: #9CA3AF;
+    --social-icon-hover-color: #FFFFFF;
+    --cursor-color: #FFFFFF;
+    --input-bg: rgba(30, 30, 30, 0.7); /* Slightly darker input bg */
+    --input-border: rgba(255, 255, 255, 0.15);
+    --input-focus-border: #8b5cf6;
+    --input-focus-shadow: rgba(139, 92, 246, 0.2);
+}
+
+html.light-theme {
+    --bg-color: #F9FAFB;
+    --text-color: #1F2937;
+    --text-secondary-color: #4B5563;
+    --card-bg: #FFFFFF;
+    --card-bg-hover: #F3F4F6; /* Slightly darker hover for light theme cards */
+    --card-border: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(249, 250, 251, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --gradient-main: linear-gradient(to right, #38bdf8, #a78bfa);
+    --gradient-hover: linear-gradient(to right, #38bdf8, #a78bfa);
+    --footer-bg: #E5E7EB;
+    --footer-text: #6B7280;
+    --project-overlay-bg: rgba(249, 250, 251, 0.7);
+    --logo-color: #1F2937;
+    --social-icon-color: #6B7280;
+    --social-icon-hover-color: #1F2937;
+    --cursor-color: #1F2937;
+    --input-bg: #FFFFFF;
+    --input-border: #D1D5DB;
+    --input-focus-border: #a78bfa;
+    --input-focus-shadow: rgba(167, 139, 250, 0.2);
+}
+
+/* ------------------------------------------------------------------- */
+/* 2. PODSTAWOWE STYLE I NOWE ELEMENTY UI
+/* ------------------------------------------------------------------- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    /* ZMIANA (UX): Usunięto 'cursor: none;' stąd. Zostanie dodane warunkowo przez JS */
+}
+
+/* ZMIANA (WCAG): Dodano klasę sr-only (Screen-reader only) dla etykiet formularzy */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Rounded corners on root elements */
+html, body {
+    border-radius: 0; /* Ensures no weird global border radius */
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient-main);
+    width: 0%;
+    z-index: 10001;
+    transition: width 0.1s linear;
+    border-bottom-right-radius: 2px; /* Slight rounding */
+}
+
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+    /* Removed global border-radius from glass-effect */
+}
+
+/* ZMIANA (UX): Ukryj domyślny kursor TYLKO jeśli JS pomyślnie dodał tę klasę */
+body.js-cursor-active {
+    cursor: none;
+}
+
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0; /* ZMIANA: Ustawienie na 0,0 - JS będzie kontrolował 'left' i 'top' */
+    left: 0;
+    transform: translate(-50%, -50%); /* Utrzymujemy wyśrodkowanie */
+    border-radius: 50%;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Usunięto 'transform' z transition dla kropki */
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--cursor-color);
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--cursor-color);
+    /* ZMIANA: Usunięto 'transform' z głównej transition, JS zarządza 'left' i 'top' */
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+body.cursor-visible .cursor-dot, body.cursor-visible .cursor-outline {
+    opacity: 1;
+}
+/* ZMIANA: Uproszczono 'interact' - JS już nie używa .animate() */
+.cursor-interact .cursor-outline {
+    transform: translate(-50%, -50%) scale(1.3);
+    border-color: transparent;
+    background-color: rgba(139, 92, 246, 0.3);
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+#preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.preloader-logo {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-color);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. SYSTEM ANIMACJI PRZY PRZEWIJANIU
+/* ------------------------------------------------------------------- */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-fade-in-up { transform: translateY(30px); }
+.animate-fade-in-down { transform: translateY(-30px); }
+.animate-fade-in-left { transform: translateX(-30px); }
+.animate-fade-in-right { transform: translateX(30px); }
+.animate-zoom-in { transform: scale(0.95); }
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. STYLE PRZYCISKÓW (ZAKTUALIZOWANE O ZAOKRĄGLENIA)
+/* ------------------------------------------------------------------- */
+.gradient-button {
+    padding: 12px 32px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-image: var(--gradient-main);
+    background-size: 200% auto;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 0.375rem; /* md rounded corners */
+}
+.gradient-button:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+
+.outline-button {
+    padding: 10px 30px;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: var(--gradient-main);
+    background-color: transparent;
+    border-radius: 0.375rem; /* md rounded corners */
+}
+.outline-button:hover {
+    /* Updated hover effect: background gradient fill */
+    background-image: var(--gradient-hover);
+    background-size: 200% auto;
+    background-position: right center;
+    color: white; /* Make text white on hover */
+    border-image-source: var(--gradient-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    /* Remove text gradient effect */
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. STYLE NAWIGACJI I TEKSTU
+/* ------------------------------------------------------------------- */
+.nav-link-gradient {
+    position: relative;
+    background-image: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    transition: all 0.4s ease;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+.nav-link-gradient::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--gradient-main);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 1px; /* Rounded underline */
+}
+.nav-link-gradient:hover::after,
+.blog-card:hover .nav-link-gradient::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.logo { color: var(--logo-color); }
+.secondary-text { color: var(--text-secondary-color); }
+footer { background-color: var(--footer-bg); border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; } /* Add rounded top corners */
+.footer-text { color: var(--footer-text); }
+
+/* ------------------------------------------------------------------- */
+/* 6. SPECJALNE ANIMACJE I STYLE KART (ZAKTUALIZOWANE O ZAOKRĄGLENIA)
+/* ------------------------------------------------------------------- */
+.hero-animate {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: revealAnimation 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes revealAnimation { to { transform: translateY(0); } }
+
+#scroll-indicator {
+    opacity: 0;
+    animation: appear 1s forwards 1.5s, bounce 2.5s infinite 2.5s;
+}
+#scroll-indicator svg {
+    color: var(--text-color);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#scroll-indicator:hover svg {
+    opacity: 1;
+    transform: scale(1.1);
+}
+@keyframes appear { to { opacity: 0.7; } }
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Styl bazowy dla kart (usługi, proces, opinie, projekty, FAQ) */
+.service-card, .process-card, .testimonial-card, .project-card, .faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease; /* Added background-color transition */
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem; /* lg rounded corners */
+}
+/* Styl dla karty bloga - ma inne animacje hover */
+.blog-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.5rem; /* lg rounded corners */
+}
+
+/* Efekt hover dla większości kart */
+.service-card:hover, .process-card:hover, .testimonial-card:hover, .project-card:hover, .faq-item:hover { /* Added faq-item hover */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background-color: var(--card-bg-hover); /* Apply hover background */
+}
+/* Efekt hover dla karty bloga */
+.blog-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--card-bg-hover);
+    box-shadow: 0 0 20px 4px rgba(139, 92, 246, 0.25);
+}
+html.light-theme .blog-card:hover {
+     box-shadow: 0 0 20px 4px rgba(167, 139, 250, 0.25);
+}
+
+/* Dodanie paska gradientowego i jego animacji do kart usług */
+.service-card::before, .process-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-main);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+    border-top-left-radius: 0.5rem; /* Match card radius */
+    border-top-right-radius: 0.5rem;
+}
+.service-card:hover::before, .process-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Ujednolicenie animacji ikony */
+.service-card .icon-wrapper, .process-card .icon-wrapper {
+    transition: transform 0.25s ease;
+    border-radius: 9999px; /* Ensure icon wrapper is round */
+}
+.service-card:hover .icon-wrapper, .process-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Animacje specyficzne dla kart procesu */
+.process-card { position: relative; }
+.process-number {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(156, 163, 175, 0.15);
+    transition: color 0.25s ease, transform 0.25s ease;
+    z-index: 0; /* Changed from -1 to 0 */
+}
+.process-card:hover .process-number {
+    color: rgba(156, 163, 175, 0.25);
+    transform: scale(1.05);
+}
+html.light-theme .process-number { color: rgba(107, 114, 128, 0.08); }
+html.light-theme .process-card:hover .process-number { color: rgba(107, 114, 128, 0.15); }
+
+/* Pozostałe style kart */
+.project-card img { transition: transform 0.4s ease; }
+.project-card:hover img { transform: scale(1.05); }
+.project-overlay { background-color: var(--project-overlay-bg); transition: opacity 0.3s ease; border-radius: 0.5rem; } /* Added transition and radius */
+.project-card:hover .project-overlay { opacity: 1; }
+
+.blog-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 0.5rem; /* Match card radius */
+    border-top-right-radius: 0.5rem;
+}
+.blog-card-image-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(13, 13, 13, 0);
+    transition: background-color 0.4s ease-in-out;
+    border-radius: inherit; /* Inherit radius */
+}
+.blog-card:hover .blog-card-image-link::after {
+    background-color: rgba(13, 13, 13, 0.4);
+}
+
+.blog-card .blog-card-image {
+    transition: transform 0.4s ease-in-out;
+}
+.blog-card:hover .blog-card-image {
+    transform: scale(1.05);
+}
+
+.blog-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 9999px; /* full rounded corners */
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.blog-card:hover .blog-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+html.light-theme .blog-tag {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+html.light-theme .blog-card:hover .blog-tag {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.read-more-link {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+.blog-card:hover .read-more-link {
+    transform: scale(1.05);
+}
+
+/* Tekst gradientowy */
+@keyframes animated-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.animated-gradient-text {
+    background-size: 200% 200%;
+    animation: animated-gradient 5s ease-in-out infinite;
+}
+
+/* Pigułki kompetencji */
+.competency-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 6px 16px;
+    border-radius: 9999px; /* full rounded corners */
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+}
+
+/* ------------------------------------------------------------------- */
+/* 7. SLIDER Z TECHNOLOGIAMI (ZINTEGROWANY)
+/* ------------------------------------------------------------------- */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+.slider-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+}
+.slider:hover .slider-track { animation-play-state: paused; }
+.slide {
+    flex-shrink: 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+.tech-logo {
+    height: 48px;
+    width: auto;
+    opacity: 0.7;
+    filter: grayscale(50%);
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+.slide:hover .tech-logo {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* ------------------------------------------------------------------- */
+/* 8. SEKCJA FAQ I FORMULARZ KONTAKTOWY (POPRAWIONA)
+/* ------------------------------------------------------------------- */
+.faq-item {
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Added border-color transition */
+    border-left: 4px solid transparent;
+}
+.faq-item.open {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left-color: #8b5cf6; /* Use solid color for border */
+}
+html.light-theme .faq-item.open {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left-color: #a78bfa;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), padding-bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    /* ZMIANA: Usunięto padding-top z transition, aby uniknąć "skoku" */
+}
+.faq-item.open .faq-answer {
+    max-height: 300px; /* Increased max-height for longer answers */
+    /* ZMIANA: Zmieniono padding-top na padding-bottom, aby uniknąć "skoku" */
+    /* padding-top: 1rem; */
+    padding-bottom: 1.5rem; /* = pb-6 w Tailwind */
+}
+.faq-toggle-icon { transition: transform 0.3s ease; }
+.faq-item.open .faq-toggle-icon { transform: rotate(45deg); }
+.faq-answer a {
+    color: #a78bfa;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.faq-answer a:hover {
+    color: #ec4899;
+}
+html.light-theme .faq-answer a {
+    color: #8b5cf6;
+}
+html.light-theme .faq-answer a:hover {
+    color: #38bdf8;
+}
+
+.form-input {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    padding: 12px 16px;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    border-radius: 0.375rem; /* md rounded corners */
+}
+.form-input:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px var(--input-focus-shadow);
+}
+/* Style for radio/checkbox focus ring */
+input[type="radio"]:focus, input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--input-focus-shadow);
+}
+/* Style for select arrow */
+select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+html.light-theme select.form-input {
+     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* ------------------------------------------------------------------- */
+/* 9. STYLE NAGŁÓWKÓW I IKON SPOŁECZNOŚCIOWYCH
+/* ------------------------------------------------------------------- */
+.section-header {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+    font-weight: 900;
+}
+ @media (min-width: 768px) { .section-header { font-size: 3rem; line-height: 1; } } /* 48px */
+
+.social-icon {
+    color: var(--social-icon-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icon:hover {
+    color: var(--social-icon-hover-color);
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------------- */
+/* 10. BANNER COOKIE (NOWOŚĆ)
+/* ------------------------------------------------------------------- */
+#cookie-consent-banner {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    border-radius: 0.5rem; /* Add rounding */
+}
+#cookie-consent-banner.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ------------------------------------------------------------------- */
+/* 11. MEGA MENU (KROK 3 + POPRAWKI)
+/* ------------------------------------------------------------------- */
+.mega-menu {
+    width: 600px; /* Szerokość panelu mega menu */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInMenu 0.3s ease-out forwards;
+    border-radius: 0.5rem; /* Add rounding */
+}
+
+.mega-menu-item {
+    display: block;
+    padding: 1rem;
+    border-radius: 0.375rem; /* md rounded corners */
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mega-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+}
+
+html.light-theme .mega-menu-item {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+html.light-theme .mega-menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Animacja pojawiania się menu */
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Obrót strzałki w menu mobilnym */
+#mobile-services-arrow.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* NOWE STYLE DLA PŁYNNEJ ANIMACJI MENU MOBILNEGO (NAPRAWA BŁĘDU NR 3) */
+#mobile-services-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#mobile-services-links.links-open {
+    max-height: 200px; /* Wystarczająco dużo miejsca na 3 linki */
+}
+
+/* ------------------------------------------------------------------- */
+/* 12. STYLE SLIDERA OPINII (SWIPER)
+/* ------------------------------------------------------------------- */
+.testimonial-slider {
+    padding-bottom: 60px; /* Miejsce na paginację */
+}
+.testimonial-slider .swiper-slide {
+    height: auto; /* Allow slides to determine height */
+    display: flex; /* Ensure cards fill height */
+}
+.testimonial-slider .swiper-pagination-bullet {
+    background-color: var(--text-secondary-color);
+    opacity: 0.5;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    border-radius: 9999px; /* Rounded bullets */
+}
+.testimonial-slider .swiper-pagination-bullet-active {
+    background-color: var(--logo-color); /* Use logo color for active bullet */
+    opacity: 1;
+}
+.testimonial-slider .swiper-button-prev,
+.testimonial-slider .swiper-button-next {
+    color: var(--text-secondary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+    border-radius: 9999px; /* Rounded arrows */
+    background-color: var(--card-bg); /* Add background to arrows */
+    padding: 10px; /* Add padding */
+    width: 44px; /* Ensure consistent size */
+    height: 44px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.testimonial-slider .swiper-button-prev::after,
+.testimonial-slider .swiper-button-next::after {
+    font-size: 1.2rem; /* Smaller arrow icons */
+    font-weight: bold;
+}
+.testimonial-slider .swiper-button-prev:hover,
+.testimonial-slider .swiper-button-next:hover {
+    color: var(--logo-color); /* Use logo color on hover */
+    transform: scale(1.1);
+    background-color: var(--card-bg-hover);
+}
+/* Adjust arrow positions */
+.testimonial-slider .swiper-button-prev { left: -10px; }
+.testimonial-slider .swiper-button-next { right: -10px; }
+@media (min-width: 768px) {
+    .testimonial-slider .swiper-button-prev { left: -25px; }
+    .testimonial-slider .swiper-button-next { right: -25px; }
+}
+
+/* ------------------------------------------------------------------- */
+/* 13. STYLE FORMULARZA WIELOETAPOWEGO (P18)
+/* ------------------------------------------------------------------- */
+/* ZMIANA (WCAG): Zastąpiono 'display: none' na 'visibility: hidden' i 'position: absolute'.
+'display: none' usuwa element z drzewa dostępności, co jest złe.
+'visibility: hidden' ukrywa go, ale zachowuje w drzewie, a 'position: absolute'
+zapobiega "skakaniu" layoutu przez ukryty element zajmujący miejsce.
+*/
+.form-step {
+    /* display: none; */ /* Usunięte */
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: calc(100% - 4rem); /* ZMIANA: Dopasuj szerokość do paddingu rodzica (p-8 = 2rem * 2) */
+    left: 2rem; /* ZMIANA: Dopasuj do paddingu rodzica */
+    transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s; /* ZMIANA: Lepsza tranzycja */
+}
+@media (min-width: 768px) {
+    .form-step {
+        width: calc(100% - 5rem); /* Dopasuj do md:p-10 */
+        left: 2.5rem;
+    }
+}
+
+.form-step.active-step {
+    /* display: block; */ /* Usunięte */
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* Przywróć do normalnego flow */
+    width: 100%; /* Przywróć pełną szerokość */
+    left: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+/* Style for radio button selection */
+input[type="radio"]:checked + span {
+    /* Optional: Style for the text next to the checked radio */
+    /* font-weight: bold; */
+}
+label:has(input[type="radio"]:checked) {
+    border-color: var(--input-focus-border);
+    background-color: rgba(139, 92, 246, 0.1); /* Subtle background */
+}
+html.light-theme label:has(input[type="radio"]:checked) {
+    background-color: rgba(167, 139, 250, 0.1);
+}

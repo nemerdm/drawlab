@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawLab - Agencja Kreatywna Radom | Strony WWW, Branding, SEO</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="overflow-x-hidden">
+
+    <div id="scroll-progress-bar"></div>
+
+    <div id="preloader">
+        <div class="preloader-logo">DL</div> </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect rounded-b-lg"> <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <div class="hidden md:flex items-center space-x-8">
+
+                <div class="relative group">
+                    <button class="nav-link-gradient flex items-center gap-1" aria-haspopup="true" aria-expanded="false"> <span>Usługi</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mega-menu hidden group-hover:block group-focus-within:block absolute top-full left-1/2 -translate-x-1/2 z-[51] glass-effect shadow-2xl rounded-lg overflow-hidden">
+                        <div class="grid grid-cols-3 gap-6 pt-10 pb-8 px-8">
+                            <a href="usluga-strony-www.html" class="mega-menu-item group/item rounded-md"> <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                                <h3 class="font-bold mt-3 group-hover/item:text-white transition-colors">Strony WWW</h3>
+                                <p class="text-sm secondary-text mt-1">Nowoczesne i ultra-szybkie strony SSG/Headless.</p>
+                            </a>
+                            <a href="usluga-branding.html" class="mega-menu-item group/item rounded-md"> <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21.5v-2.5M12 19l2-1m-2 1l-2-1"></path></svg>
+                                </div>
+                                <h3 class="font-bold mt-3 group-hover/item:text-white transition-colors">Branding i Grafika</h3>
+                                <p class="text-sm secondary-text mt-1">Strategia marki, logo i kompletna identyfikacja wizualna.</p>
+                            </a>
+                            <a href="usluga-seo.html" class="mega-menu-item group/item rounded-md"> <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                </div>
+                                <h3 class="font-bold mt-3 group-hover/item:text-white transition-colors">SEO i Marketing</h3>
+                                <p class="text-sm secondary-text mt-1">Pozycjonowanie i content marketing dla realnych wyników.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index_refactored.html#portfolio" class="nav-link-gradient">Projekty</a>
+                <a href="index_refactored.html#opinie" class="nav-link-gradient">Opinie</a>
+                <a href="o-nas.html" class="nav-link-gradient">O Nas</a>
+                <a href="cennik.html" class="nav-link-gradient">Cennik</a> <a href="index_refactored.html#faq" class="nav-link-gradient">FAQ</a>
+                <a href="index_refactored.html#blog" class="nav-link-gradient">Blog</a>
+                 <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="nav-link-gradient font-bold">Umów konsultację</a> 
+
+                <button id="theme-toggle" aria-label="Przełącz motyw kolorystyczny" class="p-2 rounded-full text-gray-400 hover:bg-gray-700/50 focus:outline-none transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 006.464 3.636L5.757 2.93A1 1 0 004.343 4.343l.707.707zm1.414 12.364a1 1 0 01-1.414 0l-.707-.707a1 1 0 111.414-1.414l.707.707a1 1 0 010 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
+                </button>
+            </div>
+            <button id="mobile-menu-button" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <button id="mobile-services-toggle" class="py-2 nav-link-gradient w-full text-left flex justify-between items-center" aria-haspopup="true" aria-expanded="false"> <span>Usługi</span>
+                <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+             </button>
+             <div id="mobile-services-links" class="pl-4 border-l-2 border-white/10">
+                <a href="usluga-strony-www.html" class="block py-2 nav-link-gradient opacity-80">Strony WWW</a>
+                <a href="usluga-branding.html" class="block py-2 nav-link-gradient opacity-80">Branding i Grafika</a>
+                <a href="usluga-seo.html" class="block py-2 nav-link-gradient opacity-80">SEO i Marketing</a>
+             </div>
+
+             <a href="index_refactored.html#portfolio" class="block py-2 nav-link-gradient">Projekty</a>
+             <a href="index_refactored.html#opinie" class="block py-2 nav-link-gradient">Opinie</a>
+             <a href="o-nas.html" class="block py-2 nav-link-gradient">O Nas</a>
+             <a href="cennik.html" class="block py-2 nav-link-gradient">Cennik</a>
+             <a href="index_refactored.html#faq" class="block py-2 nav-link-gradient">FAQ</a>
+             <a href="index_refactored.html#blog" class="block py-2 nav-link-gradient">Blog</a>
+             <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="block py-2 nav-link-gradient font-bold">Umów konsultację</a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden">
+        <div class="relative z-10 p-6 md:pl-24">
+            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-widest leading-tight">
+                <div class="overflow-hidden">
+                    <span class="block logo hero-animate" style="animation-delay: 0.1s;">DrawLab</span> </div>
+                <div class="overflow-hidden h-[1.2em]"> <span id="animated-subtitle" class="block nav-link-gradient hero-animate" style="animation-delay: 0.3s; transition: opacity 0.4s ease-in-out;">Kreatywny Developer</span>
+                </div>
+            </h1>
+            <div class="overflow-hidden">
+                <p class="text-lg md:text-xl secondary-text mt-4 max-w-2xl mx-auto md:mx-0 hero-animate" style="animation-delay: 0.5s;">
+                    Agencja kreatywna z Radomia. Tworzymy strony WWW, branding i strategie SEO, które przynoszą rezultaty. </p>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                 <div class="overflow-hidden">
+                    <a href="#portfolio" class="inline-block gradient-button hero-animate rounded-md" style="animation-delay: 0.7s;"> Zobacz nasze prace
+                    </a>
+                 </div>
+                 <div class="overflow-hidden">
+                     <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="inline-block outline-button hero-animate rounded-md" style="animation-delay: 0.8s;"> Umów konsultację
+                    </a>
+                 </div>
+            </div>
+        </div>
+        <a href="#uslugi" id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20" aria-label="Przewiń w dół">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"></path></svg>
+        </a>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <section id="uslugi" class="py-16 md:py-24">
+            <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Nasze <span class="nav-link-gradient">Usługi</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="usluga-branding.html" class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg"> <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
+                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21.5v-2.5M12 19l2-1m-2 1l-2-1"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6">Branding i Grafika</h3>
+                    <p class="secondary-text mt-2 flex-grow">Projektowanie logo, identyfikacji wizualnej i materiałów marketingowych.</p> </a>
+                <a href="usluga-seo.html" class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 150ms;"> <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
+                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6">SEO i Marketing</h3>
+                    <p class="secondary-text mt-2 flex-grow">Optymalizacja SEO i content marketing, aby Twoja strona była widoczna.</p> </a>
+                <a href="usluga-strony-www.html" class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;"> <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
+                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6">Strony WWW</h3>
+                    <p class="secondary-text mt-2 flex-grow">Budowanie nowoczesnych, responsywnych i szybkich stron SSG/Headless.</p> </a>
+            </div>
+
+            <div class="mt-24 md:mt-32 animate-on-scroll animate-fade-in-up">
+                <h3 class="text-2xl font-bold text-center mb-12">Nasz <span class="nav-link-gradient">Warsztat Technologiczny</span></h3>
+                 <div class="slider">
+                    <div class="slider-track" id="slider-track">
+                        </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                 <div class="md:order-last w-full h-80 md:h-full rounded-lg bg-gray-700/50 animate-on-scroll animate-fade-in-right">
+                      
+                     <img src="https://placehold.co/600x400/0D0D0D/E5E7EB?text=Case+Study+Radom"
+                          alt="Case Study projektu wykonanego przez DrawLab z Radomia"
+                          class="w-full h-full object-cover rounded-lg shadow-2xl"
+                          onerror="this.onerror=null;this.src='https://placehold.co/600x400/0D0D0D/E5E7EB?text=Błąd+ładowania+obrazka';">
+                 </div>
+                 <div class="text-center md:text-left animate-on-scroll animate-fade-in-left" style="transition-delay: 150ms;">
+                    <h2 class="section-header">Case Study: <br><span class="nav-link-gradient">[Nazwa Projektu Klienta]</span></h2> <div class="mt-6 text-lg leading-relaxed secondary-text space-y-4">
+                        <p><strong>Cel:</strong> Stworzenie nowoczesnej strony korporacyjnej, która zwiększy zaangażowanie użytkowników i poprawi wizerunek marki w internecie.</p>
+                        <p><strong>Wyzwanie:</strong> Głównym wyzwaniem było zintegrowanie złożonego systemu rezerwacji z intuicyjnym interfejsem, zachowując przy tym wysoką wydajność strony (Core Web Vitals).</p> <p><strong>Rozwiązanie:</strong> Zaprojektowaliśmy i wdrożyliśmy w pełni responsywną stronę opartą o Next.js (React) i Tailwind CSS, zintegrowaną z Headless CMS (Strapi), zoptymalizowaną pod kątem SEO i szybkości ładowania.</p> </div>
+                     <div class="mt-8">
+                        <a href="case-study-wzor.html" class="inline-block gradient-button rounded-md">
+                            Zobacz pełne Case Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-24 md:mt-32">
+                <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Więcej Naszych <span class="nav-link-gradient">Prac</span></h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll animate-zoom-in">
+                         
+                        <img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Projekt+1"
+                             alt="Projekt 1 wykonany przez DrawLab"
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';">
+                        <div class="project-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                            <div class="text-center">
+                                <h3 class="text-xl font-bold nav-link-gradient">[Nazwa Projektu 1]</h3>
+                                <p class="secondary-text mt-2">Web Design, SSG/Headless</p>
+                            </div>
+                            <a href="case-study-wzor.html" class="inline-block gradient-button mt-6 !py-2 !px-6 !text-sm rounded-md"> Zobacz Case Study
+                            </a>
+                        </div>
+                    </div>
+                     <div class="project-card group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll animate-zoom-in" style="transition-delay: 150ms;">
+                         
+                        <img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Projekt+2"
+                             alt="Projekt 2 wykonany przez DrawLab"
+                             class="w-full h-full object-cover"
+                              onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';">
+                         <div class="project-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                            <div class="text-center">
+                                <h3 class="text-xl font-bold nav-link-gradient">[Nazwa Projektu 2]</h3>
+                                <p class="secondary-text mt-2">Branding, Logo</p>
+                            </div>
+                            </div>
+                    </div>
+                     <div class="project-card group relative overflow-hidden rounded-lg shadow-lg animate-on-scroll animate-zoom-in" style="transition-delay: 300ms;">
+                         
+                        <img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Projekt+3"
+                             alt="Projekt 3 wykonany przez DrawLab"
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';">
+                         <div class="project-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                            <div class="text-center">
+                                <h3 class="text-xl font-bold nav-link-gradient">[Nazwa Projektu 3]</h3>
+                                <p class="secondary-text mt-2">Strona WWW, SEO</p>
+                            </div>
+                            <a href="case-study-wzor.html" class="inline-block gradient-button mt-6 !py-2 !px-6 !text-sm rounded-md"> Zobacz Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-16 text-center animate-on-scroll animate-fade-in-up">
+                    <a href="#" class="inline-block outline-button rounded-md"> Przeglądaj Wszystkie Projekty
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="opinie" class="py-16 md:py-24">
+             <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Co mówią <span class="nav-link-gradient">nasi klienci</span></h2>
+
+             <div class="swiper testimonial-slider max-w-6xl mx-auto relative animate-on-scroll animate-fade-in-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-8 md:p-10 relative h-full flex flex-col justify-between rounded-lg"> <svg class="absolute top-0 left-0 w-16 h-16 mt-4 ml-4 text-gray-400/10 z-0" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                <path d="M9.33 12.022c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33H9.33zm12.334 0c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33h-5.312z" />
+                            </svg>
+                            <blockquote class="text-lg italic secondary-text relative z-10 flex-grow">
+                                “Współpraca z DrawLab to była czysta przyjemność. Strona jest szybsza o 300% i wreszcie mamy zapytania z Google! Pełen profesjonalizm i świetna komunikacja.”
+                            </blockquote>
+                            <footer class="mt-6 pt-6 border-t border-white/10 flex items-center gap-4 relative z-10">
+                                 
+                                <img src="https://placehold.co/40x40/374151/E5E7EB?text=L1" alt="Logo Klienta 1" class="w-10 h-10 rounded-full flex-shrink-0" onerror="this.style.display='none'">
+                                <div>
+                                    <p class="font-bold">Jan Kowalski</p>
+                                    <p class="text-sm secondary-text">CEO, Przykładowa Firma Sp. z o.o.</p>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                     <div class="swiper-slide">
+                        <div class="testimonial-card p-8 md:p-10 relative h-full flex flex-col justify-between rounded-lg">
+                            <svg class="absolute top-0 left-0 w-16 h-16 mt-4 ml-4 text-gray-400/10 z-0" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.33 12.022c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33H9.33zm12.334 0c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33h-5.312z" /></svg>
+                            <blockquote class="text-lg italic secondary-text relative z-10 flex-grow">
+                                “Nowe logo i identyfikacja wizualna przerosły nasze oczekiwania. DrawLab naprawdę wsłuchało się w nasze potrzeby i stworzyło coś unikalnego.”
+                            </blockquote>
+                            <footer class="mt-6 pt-6 border-t border-white/10 flex items-center gap-4 relative z-10">
+                                 
+                                <img src="https://placehold.co/40x40/374151/E5E7EB?text=L2" alt="Logo Klienta 2" class="w-10 h-10 rounded-full flex-shrink-0" onerror="this.style.display='none'">
+                                <div>
+                                    <p class="font-bold">Anna Nowak</p>
+                                    <p class="text-sm secondary-text">Marketing Manager, Innowacyjna Spółka</p>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                     <div class="swiper-slide">
+                        <div class="testimonial-card p-8 md:p-10 relative h-full flex flex-col justify-between rounded-lg">
+                            <svg class="absolute top-0 left-0 w-16 h-16 mt-4 ml-4 text-gray-400/10 z-0" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.33 12.022c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33H9.33zm12.334 0c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33h-5.312z" /></svg>
+                            <blockquote class="text-lg italic secondary-text relative z-10 flex-grow">
+                                “Dzięki strategii SEO od DrawLab, nasz ruch organiczny wzrósł o 150% w ciągu pół roku. Transparentne raporty i proaktywne podejście – polecam!”
+                            </blockquote>
+                            <footer class="mt-6 pt-6 border-t border-white/10 flex items-center gap-4 relative z-10">
+                                 
+                                <img src="https://placehold.co/40x40/374151/E5E7EB?text=L3" alt="Logo Klienta 3" class="w-10 h-10 rounded-full flex-shrink-0" onerror="this.style.display='none'">
+                                <div>
+                                    <p class="font-bold">Marek Wiśniewski</p>
+                                    <p class="text-sm secondary-text">Właściciel, Sklep Internetowy XYZ</p>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-8 md:p-10 relative h-full flex flex-col justify-between rounded-lg">
+                            <svg class="absolute top-0 left-0 w-16 h-16 mt-4 ml-4 text-gray-400/10 z-0" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.33 12.022c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33H9.33zm12.334 0c-1.34 0-2.33.99-2.33 2.33v5.312c0 1.34.99 2.33 2.33 2.33h5.312c1.34 0 2.33-.99 2.33-2.33V14.35c0-1.34-.99-2.33-2.33-2.33h-5.312z" /></svg>
+                            <blockquote class="text-lg italic secondary-text relative z-10 flex-grow">
+                                “Potrzebowaliśmy strony 'na wczoraj'. DrawLab stanęło na wysokości zadania, dostarczając świetny produkt w ekspresowym tempie.”
+                            </blockquote>
+                            <footer class="mt-6 pt-6 border-t border-white/10 flex items-center gap-4 relative z-10">
+                                 
+                                <img src="https://placehold.co/40x40/374151/E5E7EB?text=L4" alt="Logo Klienta 4" class="w-10 h-10 rounded-full flex-shrink-0" onerror="this.style.display='none'">
+                                <div>
+                                    <p class="font-bold">Katarzyna Zielińska</p>
+                                    <p class="text-sm secondary-text">Event Manager, Agencja Eventowa</p>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-prev text-white hover:text-pink-500 transition-colors"></div>
+                <div class="swiper-button-next text-white hover:text-pink-500 transition-colors"></div>
+                 <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section id="o-mnie" class="py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                 <div id="about-me-image" class="w-full h-80 md:h-full rounded-lg bg-gray-700/50 animate-on-scroll animate-fade-in-left" style="transform-style: preserve-3d; transform: perspective(1000px);">
+                     
+                    <img src="drawlab.blow.jpg"
+                         alt="Zdjęcie profilowe Piotra - założyciela agencji kreatywnej DrawLab z Radomia"
+                         class="w-full h-full object-cover rounded-lg shadow-2xl" style="transform: translateZ(20px);"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';"> </div>
+                <div class="text-center md:text-left animate-on-scroll animate-fade-in-right" style="transition-delay: 150ms;">
+                    <h2 class="section-header">Poznaj <span class="nav-link-gradient animated-gradient-text">DrawLab</span></h2>
+                    <div class="mt-6 text-lg leading-relaxed secondary-text space-y-4">
+                        <p>
+                            Jesteśmy agencją kreatywną z Radomia, która łączy pasję do designu z technologiczną precyzją. Przekształcamy pomysły w cyfrowe rozwiązania, które nie tylko świetnie wyglądają, ale przede wszystkim – działają i przynoszą rezultaty.
+                        </p>
+                        <p>
+                            Wierzymy w podejście "full-service" – od strategii marki, przez projekt graficzny, po zakodowanie szybkiej i bezpiecznej strony internetowej. Jesteśmy Twoim partnerem w cyfrowym świecie.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
+                         <a href="o-nas.html" class="inline-block gradient-button animate-on-scroll animate-fade-in-up rounded-md" style="transition-delay: 250ms;"> Poznaj nasz zespół i misję
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 md:py-24">
+            <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Często zadawane <span class="nav-link-gradient">pytania</span></h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item animate-on-scroll animate-fade-in-up rounded-lg"> <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold p-6">
+                        <span>Jak wygląda proces wyceny projektu?</span>
+                        <svg class="faq-toggle-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 secondary-text">
+                        <p>Każdy projekt wyceniamy indywidualnie po wstępnej rozmowie (<a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="font-bold underline">umów ją tutaj</a>) i analizie Twoich potrzeb. Wycena jest darmowa i niezobowiązująca. Chętnie przygotujemy dla Ciebie szczegółową ofertę.</p> </div>
+                </div>
+                <div class="faq-item animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 100ms;"> <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold p-6">
+                        <span>Ile trwa realizacja strony internetowej?</span>
+                        <svg class="faq-toggle-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 secondary-text">
+                        <p>Czas realizacji zależy od złożoności. Prosta strona typu One-Page (pakiet <a href="cennik.html#cennik-strony" class="font-bold underline">Start</a>) może powstać w 1-2 tygodnie. Bardziej rozbudowany serwis (pakiet <a href="cennik.html#cennik-strony" class="font-bold underline">Biznes</a> lub <a href="cennik.html#cennik-strony" class="font-bold underline">Pro</a>) zajmuje zazwyczaj 4-8 tygodni. Szczegółowy harmonogram poznasz po omówieniu projektu.</p> </div>
+                </div>
+                <div class="faq-item animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 200ms;"> <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold p-6">
+                        <span>Czy oferujecie wsparcie po zakończeniu projektu?</span>
+                        <svg class="faq-toggle-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 secondary-text">
+                        <p>Tak! Na nasz kod dajemy 12 miesięcy gwarancji. Dodatkowo oferujemy pakiety wsparcia technicznego (maintenance), które obejmują regularne aktualizacje, kopie zapasowe i pomoc w razie problemów. Dbam o to, aby Twoja strona działała bez zarzutu długo po jej wdrożeniu.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;"> <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold p-6">
+                        <span>Czy strona będzie moja na własność?</span> <svg class="faq-toggle-icon w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 secondary-text">
+                        <p>Tak, w 100%! Po finalnym rozliczeniu projektu przekazujemy Ci pełne majątkowe prawa autorskie do stworzonej strony i jej kodu źródłowego. Stajesz się jej jedynym właścicielem i możesz ją dowolnie rozwijać lub przenieść na inny serwer bez żadnych ograniczeń.</p> </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center animate-on-scroll animate-fade-in-up" style="transition-delay: 400ms;">
+                <h3 class="text-2xl font-bold">Nie znalazłeś odpowiedzi?</h3>
+                <p class="secondary-text mt-3 mb-6 max-w-lg mx-auto">Jeśli masz inne pytania, chętnie na nie odpowiemy. Najszybciej będzie, jeśli umówisz krótką, darmową konsultację!</p> <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="inline-block gradient-button rounded-md"> Umów rozmowę
+                </a>
+            </div>
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Jak wygląda proces wyceny projektu?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Każdy projekt wyceniamy indywidualnie po wstępnej rozmowie i analizie Twoich potrzeb. Wycena jest darmowa i niezobowiązująca. Umów darmową konsultację, a chętnie przygotujemy dla Ciebie szczegółową ofertę."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Ile trwa realizacja strony internetowej?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Czas realizacji zależy od złożoności projektu. Prosta strona typu One-Page (pakiet Start) może powstać w 1-2 tygodnie. Bardziej rozbudowany serwis (pakiet Biznes lub Pro) zajmuje zazwyczaj 4-8 tygodni."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Czy oferujecie wsparcie po zakończeniu projektu?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak! Na nasz kod dajemy 12 miesięcy gwarancji. Dodatkowo oferujemy pakiety wsparcia technicznego (maintenance), które obejmują regularne aktualizacje, kopie zapasowe i pomoc w razie problemów."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Czy strona będzie moja na własność?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak, w 100%! Po finalnym rozliczeniu projektu przekazujemy Ci pełne majątkowe prawa autorskie do stworzonej strony i jej kodu źródłowego. Stajesz się jej jedynym właścicielem."
+                  }
+                }
+              ]
+            }
+            </script>
+        </section>
+
+        <section id="blog" class="py-16 md:py-24">
+            <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Najnowsze <span class="nav-link-gradient">wpisy</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="blog-card group animate-on-scroll animate-fade-in-up md:col-span-2 md:flex md:items-center rounded-lg"> <a href="#" class="blog-card-image-link md:w-1/2 flex-shrink-0"> <img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Blog+1"
+                             alt="Miniatura wpisu blogowego: 5 trendów w web designie na 2026"
+                             class="blog-card-image w-full h-56 md:h-full object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';"> </a>
+                    <div class="p-6 md:p-8 md:w-1/2">
+                        <p class="text-sm secondary-text flex items-center gap-4">
+                            <span>18 Października, 2025</span>
+                            <span class="opacity-70">☕ 5 min czytania</span>
+                        </p>
+                        <h3 class="text-2xl font-bold mt-2">
+                            <a href="#" class="nav-link-gradient">5 trendów w web designie na 2026</a> </h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="blog-tag rounded-full">Web Design</span> <span class="blog-tag rounded-full">Trendy</span> </div>
+                        <p class="secondary-text mt-4">Odkryj, jakie trendy zdominują świat projektowania stron internetowych w nadchodzącym roku i jak możesz je wykorzystać...</p>
+                        <a href="#" class="read-more-link mt-6 font-semibold nav-link-gradient">Czytaj dalej <span class="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1">→</span></a> </div>
+                </div>
+
+                <div class="blog-card group animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 150ms;"> <a href="#" class="blog-card-image-link"><img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Blog+2" alt="Miniatura wpisu blogowego: Dlaczego warto wybrać Tailwind CSS?" class="blog-card-image w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';"></a> <div class="p-6">
+                        <p class="text-sm secondary-text flex items-center gap-4">
+                            <span>12 Października, 2025</span>
+                            <span class="opacity-70">☕ 7 min czytania</span>
+                        </p>
+                        <h3 class="text-xl font-bold mt-2">
+                            <a href="#" class="nav-link-gradient">Dlaczego warto wybrać Tailwind CSS?</a> </h3>
+                         <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="blog-tag rounded-full">Poradnik</span> <span class="blog-tag rounded-full">CSS</span> </div>
+                        <p class="secondary-text mt-3">Analiza zalet i wad popularnego frameworka CSS, który rewolucjonizuje pracę deweloperów...</p>
+                        <a href="#" class="read-more-link mt-4 font-semibold nav-link-gradient">Czytaj dalej <span class="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1">→</span></a> </div>
+                </div>
+                <div class="blog-card group animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;"> <a href="#" class="blog-card-image-link"><img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Blog+3" alt="Miniatura wpisu blogowego: Podstawy optymalizacji SEO dla strony" class="blog-card-image w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1C1C1C/E5E7EB?text=Błąd+ładowania+obrazka';"></a> <div class="p-6">
+                        <p class="text-sm secondary-text flex items-center gap-4">
+                            <span>5 Października, 2025</span>
+                            <span class="opacity-70">☕ 4 min czytania</span>
+                        </p>
+                        <h3 class="text-xl font-bold mt-2">
+                            <a href="#" class="nav-link-gradient">Podstawy optymalizacji SEO dla strony</a> </h3>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="blog-tag rounded-full">SEO</span> <span class="blog-tag rounded-full">Marketing</span> </div>
+                        <p class="secondary-text mt-3">Praktyczne porady, jak poprawić widoczność swojej strony w wyszukiwarkach bez dużych nakładów...</p>
+                         <a href="#" class="read-more-link mt-4 font-semibold nav-link-gradient">Czytaj dalej <span class="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-1">→</span></a> </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center animate-on-scroll animate-fade-in-up">
+                <a href="#" class="inline-block outline-button rounded-md"> Przeglądaj Archiwum
+                </a>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-16 md:py-32 text-center">
+            <div class="animate-on-scroll animate-fade-in-up">
+                <h2 class="section-header">Masz ciekawy projekt? <br> <span class="nav-link-gradient">Opowiedz nam o nim!</span></h2> <p class="text-lg secondary-text mt-6 max-w-xl mx-auto">
+                    Jesteśmy otwarci na nowe wyzwania. Wypełnij krótki brief poniżej, a my wrócimy do Ciebie z propozycją. Najszybszy kontakt? <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="font-bold underline nav-link-gradient">Umów konsultację!</a> </p>
+
+                <div id="brief-form-wrapper" class="mt-12 max-w-xl mx-auto text-left relative overflow-hidden service-card p-8 md:p-10 rounded-lg"> <form id="multi-step-form">
+                        <div class="mb-8">
+                            <div class="relative pt-1">
+                                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gradient-to-r from-pink-500/30 to-purple-500/30">
+                                    <div id="progress-bar" style="width:25%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-500 ease-out"></div>
+                                </div>
+                                <span id="progress-text" class="text-xs font-semibold inline-block text-purple-400 absolute right-0 -top-4">
+                                    Krok 1/4
+                                </span>
+                            </div>
+                        </div>
+
+                        <div id="step-1" class="form-step active-step">
+                            <label class="block text-lg font-bold mb-4">Jakiej usługi potrzebujesz?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 form-input cursor-pointer rounded-md hover:border-purple-500 transition-colors">
+                                    <input type="radio" name="service" value="Strona WWW" class="mr-3 accent-pink-500" required>
+                                    Strona WWW (Nowa lub redesign)
+                                </label>
+                                <label class="flex items-center p-4 form-input cursor-pointer rounded-md hover:border-purple-500 transition-colors">
+                                    <input type="radio" name="service" value="Branding" class="mr-3 accent-pink-500">
+                                    Branding i Grafika (Logo, Identyfikacja)
+                                </label>
+                                <label class="flex items-center p-4 form-input cursor-pointer rounded-md hover:border-purple-500 transition-colors">
+                                    <input type="radio" name="service" value="SEO" class="mr-3 accent-pink-500">
+                                    SEO i Content Marketing
+                                </label>
+                                <label class="flex items-center p-4 form-input cursor-pointer rounded-md hover:border-purple-500 transition-colors">
+                                    <input type="radio" name="service" value="Inne" class="mr-3 accent-pink-500">
+                                    Inne / Nie wiem jeszcze
+                                </label>
+                            </div>
+                            <div class="mt-8 text-right">
+                                <button type="button" class="next-btn gradient-button rounded-md">Dalej →</button> </div>
+                        </div>
+
+                        <div id="step-2" class="form-step">
+                            <label for="budget" class="block text-lg font-bold mb-4">Jaki jest Twój przybliżony budżet?</label>
+                            <p class="text-sm secondary-text mb-4">To pomoże nam dopasować rozwiązanie. Jesteśmy elastyczni!</p>
+                            <select id="budget" name="budget" required class="form-input rounded-md"> <option value="" disabled selected>Wybierz przedział...</option>
+                                <option value="< 5 000 PLN">&lt; 5 000 PLN</option>
+                                <option value="5 000 - 15 000 PLN">5 000 - 15 000 PLN</option>
+                                <option value="15 000 - 30 000 PLN">15 000 - 30 000 PLN</option>
+                                <option value="> 30 000 PLN">&gt; 30 000 PLN</option>
+                                <option value="Nie wiem / Do ustalenia">Nie wiem / Do ustalenia</option>
+                            </select>
+                            <div class="mt-8 flex justify-between">
+                                <button type="button" class="prev-btn outline-button rounded-md">← Wstecz</button> <button type="button" class="next-btn gradient-button rounded-md">Dalej →</button> </div>
+                        </div>
+
+                        <div id="step-3" class="form-step">
+                             <label for="message" class="block text-lg font-bold mb-4">Opisz krótko swój projekt (opcjonalne)</label>
+                            <p class="text-sm secondary-text mb-4">Co chcesz osiągnąć? Czy masz jakieś inspiracje? Im więcej szczegółów, tym lepiej.</p>
+                            <textarea id="message" name="message" rows="5" placeholder="Np. Potrzebuję nowoczesnej strony dla mojej kawiarni w Radomiu, z menu i galerią zdjęć..." class="form-input rounded-md"></textarea> <div class="mt-8 flex justify-between">
+                                <button type="button" class="prev-btn outline-button rounded-md">← Wstecz</button> <button type="button" class="next-btn gradient-button rounded-md">Dalej →</button> </div>
+                        </div>
+
+                        <div id="step-4" class="form-step">
+                            <label class="block text-lg font-bold mb-4">Zostaw swoje dane kontaktowe</label>
+                            <div class="space-y-4">
+                                <label for="form-name" class="sr-only">Twoje imię i nazwisko</label>
+                                <input type="text" id="form-name" name="name" placeholder="Twoje imię i nazwisko" required class="form-input rounded-md">
+                                <label for="form-email" class="sr-only">Twój e-mail</label>
+                                <input type="email" id="form-email" name="email" placeholder="Twój e-mail" required class="form-input rounded-md">
+                                <label for="form-phone" class="sr-only">Telefon (opcjonalnie)</label>
+                                <input type="tel" id="form-phone" name="phone" placeholder="Telefon (opcjonalnie)" class="form-input rounded-md">
+                                <label for="source" class="sr-only">Skąd o nas wiesz? (opcjonalnie)</label>
+                                <select id="source" name="source" class="form-input rounded-md">
+                                    <option value="" disabled selected>Skąd o nas wiesz? (opcjonalnie)</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Polecenie">Polecenie</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="Facebook/Instagram">Facebook/Instagram</option>
+                                    <option value="Inne">Inne</option>
+                                </select>
+                            </div>
+                             <div class="mt-6">
+                                <label for="form-rodo" class="flex items-start text-sm secondary-text cursor-pointer">
+                                    <input type="checkbox" id="form-rodo" name="rodo" required class="mr-2 mt-1 accent-pink-500 flex-shrink-0">
+                                    <span>Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="#" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">polityką prywatności</a>.</span> </label>
+                            </div>
+                            <div class="mt-8 flex justify-between">
+                                <button type="button" class="prev-btn outline-button rounded-md">← Wstecz</button> <button type="submit" class="gradient-button rounded-md">Wyślij Brief ✔</button> </div>
+                        </div>
+                    </form>
+
+                    <div id="success-message" class="hidden text-center" style="opacity: 0; transition: opacity 0.5s ease;">
+                        <h3 class="text-2xl font-bold nav-link-gradient">Dziękujemy za Twój brief!</h3>
+                        <p class="secondary-text mt-4">Odezwiemy się do Ciebie w ciągu 24 godzin roboczych, aby omówić szczegóły. Możesz też od razu <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="font-bold underline nav-link-gradient">umówić konsultację</a>.</p> </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 md:py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                 <div class="text-center md:text-left">
+                     <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <p class="secondary-text text-sm mt-1">Agencja Kreatywna z Radomia</p>
+                     <p class="footer-text text-xs mt-2">NIP: [Twój NIP] <br> [Ulica i numer], 26-600 Radom</p>
+                 </div>
+                 <div class="hidden md:flex gap-16 text-sm">
+                     <div>
+                         <h4 class="font-bold mb-3">Usługi</h4>
+                         <ul class="space-y-2 footer-text">
+                             <li><a href="usluga-strony-www.html" class="hover:text-white transition-colors">Strony WWW</a></li>
+                             <li><a href="usluga-branding.html" class="hover:text-white transition-colors">Branding i Grafika</a></li>
+                             <li><a href="usluga-seo.html" class="hover:text-white transition-colors">SEO i Marketing</a></li>
+                         </ul>
+                     </div>
+                      <div>
+                         <h4 class="font-bold mb-3">Portfolio</h4>
+                         <ul class="space-y-2 footer-text">
+                             <li><a href="index_refactored.html#portfolio" class="hover:text-white transition-colors">Wszystkie Projekty</a></li>
+                             <li><a href="case-study-wzor.html" class="hover:text-white transition-colors">[Case Study 1]</a></li>
+                             <li><a href="#" class="hover:text-white transition-colors">[Case Study 2]</a></li>
+                         </ul>
+                     </div>
+                      <div>
+                         <h4 class="font-bold mb-3">DrawLab</h4>
+                         <ul class="space-y-2 footer-text">
+                             <li><a href="o-nas.html" class="hover:text-white transition-colors">O Nas</a></li>
+                             <li><a href="index_refactored.html#blog" class="hover:text-white transition-colors">Blog</a></li>
+                             <li><a href="cennik.html" class="hover:text-white transition-colors">Cennik</a></li>
+                             <li><a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Umów konsultację</a></li> </ul>
+                     </div>
+                 </div>
+                 <div class="flex gap-6">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Behance"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 5.5h-5c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM19.5 8h-2c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM24 3.5v11c0 0.827-0.673 1.5-1.5 1.5h-6.239c-0.42 0-0.741 0.453-0.575 0.842 0.654 1.536-0.301 2.658-1.186 2.658-0.692 0-1.782-0.844-1.782-2.901 0-2.316 2.029-4.099 4.282-4.099h3c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-3c-1.42 0-2.782 1.243-2.782 2.599 0 0.99 0.528 1.401 0.782 1.401 0.354 0 0.812-0.584 0.528-1.189-0.19-0.392 0.038-0.811 0.449-0.811h6.239c0.275 0 0.5-0.225 0.5-0.5v-11c0-0.275-0.225-0.5-0.5-0.5h-18c-0.275 0-0.5 0.225-0.5 0.5v17c0 0.275 0.225 0.5 0.5 0.5h8.5v-1c0-0.827 0.673-1.5 1.5-1.5s1.5 0.673 1.5 1.5v1h0.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5h-0.5v-1c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v1h-8.5c-0.827 0-1.5-0.673-1.5-1.5v-17c0-0.827 0.673-1.5 1.5-1.5h18c0.827 0 1.5 0.673 1.5 1.5zM12.25 12.501c-2.062 0-3.25-1.688-3.25-3.501 0-1.932 1.34-3.5 3.5-3.5s3.5 1.568 3.5 3.5c0 1.812-1.188 3.501-3.75 3.501zm0.25-6c-1.071 0-1.986 0.931-1.986 2.499 0 1.429 0.795 2.501 2.236 2.501 1.288 0 2.014-1.072 2.014-2.501 0-1.568-0.943-2.499-2.264-2.499z"/></svg></a>
+                 </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center footer-text text-sm">
+                 <p>&copy; 2025 DrawLab. Wszelkie prawa zastrzeżone. | <a href="#" class="hover:underline">Polityka Prywatności</a></p> </div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:w-auto z-[9998] p-6 glass-effect rounded-lg shadow-2xl">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
+            <p class="text-sm secondary-text text-center md:text-left">
+                Ta strona wykorzystuje pliki cookie, aby zapewnić Ci najlepsze doświadczenia. Kontynuując, zgadzasz się na naszą <a href="#" class="underline hover:text-white">politykę prywatności</a>. </p>
+            <div class="flex gap-4 flex-shrink-0">
+                <button id="accept-cookies" class="gradient-button !px-6 !py-2 !text-sm rounded-md">Akceptuj</button> <button id="decline-cookies" class="outline-button !px-6 !py-2 !text-sm rounded-md">Odrzuć</button> </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
