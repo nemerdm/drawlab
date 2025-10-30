@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tytuł specyficzny dla podstrony -->
-    <title>Branding i Grafika - Logo, Identyfikacja Wizualna | DrawLab Radom</title> <!-- Zaktualizowany tytuł SEO -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Branding i Grafika - Logo, Identyfikacja Wizualna | DrawLab Radom</title> <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -17,29 +14,21 @@
     <div id="scroll-progress-bar"></div>
 
     <div id="preloader">
-        <div class="preloader-logo">DL</div> <!-- Logo DrawLab -->
-    </div>
+        <div class="preloader-logo">DL</div> </div>
 
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- =================================================================== -->
-    <!-- ======================= SEKCJA NAWIGACJI (ZAKTUALIZOWANA) ========== -->
-    <!-- =================================================================== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect rounded-b-lg"> <!-- Dodano rounded-b-lg -->
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <!-- Zaktualizowano Logo -->
-            <div class="hidden md:flex items-center space-x-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect rounded-b-lg"> <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <div class="hidden md:flex items-center space-x-8">
 
-                <!-- MEGA MENU "USŁUGI" -->
                 <div class="relative group">
-                    <button class="nav-link-gradient flex items-center gap-1">
+                    <button class="nav-link-gradient flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
                         <span>Usługi</span>
                         <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="mega-menu hidden group-hover:block group-focus-within:block absolute top-full left-1/2 -translate-x-1/2 z-[51] glass-effect shadow-2xl rounded-lg overflow-hidden">
                         <div class="grid grid-cols-3 gap-6 pt-10 pb-8 px-8">
-                            <!-- Kolumna 1: Strony WWW -->
                             <a href="usluga-strony-www.html" class="mega-menu-item group/item rounded-md">
                                 <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
@@ -47,15 +36,12 @@
                                 <h3 class="font-bold mt-3 group-hover/item:text-white transition-colors">Strony WWW</h3>
                                 <p class="text-sm secondary-text mt-1">Nowoczesne i ultra-szybkie strony SSG/Headless.</p>
                             </a>
-                            <!-- Kolumna 2: Branding (Aktywna) -->
-                            <a href="usluga-branding.html" class="mega-menu-item group/item rounded-md font-bold"> <!-- Dodano font-bold -->
-                                <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
+                            <a href="usluga-branding.html" class="mega-menu-item group/item rounded-md font-bold"> <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21.5v-2.5M12 19l2-1m-2 1l-2-1"></path></svg>
                                 </div>
                                 <h3 class="font-bold mt-3 group-hover/item:text-white transition-colors">Branding i Grafika</h3>
                                 <p class="text-sm secondary-text mt-1">Strategia marki, logo i kompletna identyfikacja wizualna.</p>
                             </a>
-                            <!-- Kolumna 3: SEO -->
                             <a href="usluga-seo.html" class="mega-menu-item group/item rounded-md">
                                 <div class="icon-wrapper p-3 rounded-full" style="background-image: var(--gradient-main);">
                                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
@@ -73,28 +59,25 @@
                 <a href="cennik.html" class="nav-link-gradient">Cennik</a>
                 <a href="index_refactored.html#faq" class="nav-link-gradient">FAQ</a>
                 <a href="index_refactored.html#blog" class="nav-link-gradient">Blog</a>
-                <!-- Zastąpiono "Kontakt" przez "Umów konsultację" (P20) -->
-                <a href="#calendly-placeholder" target="_blank" class="nav-link-gradient font-bold">Umów konsultację</a>
+                <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="nav-link-gradient font-bold">Umów konsultację</a>
 
-                <button id="theme-toggle" class="p-2 rounded-full text-gray-400 hover:bg-gray-700/50 focus:outline-none transition-colors">
+                <button id="theme-toggle" aria-label="Przełącz motyw kolorystyczny" class="p-2 rounded-full text-gray-400 hover:bg-gray-700/50 focus:outline-none transition-colors">
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 006.464 3.636L5.757 2.93A1 1 0 004.343 4.343l.707.707zm1.414 12.364a1 1 0 01-1.414 0l-.707-.707a1 1 0 111.414-1.414l.707.707a1 1 0 010 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path></svg>
                 </button>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+            <button id="mobile-menu-button" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" class="md:hidden text-gray-300 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <!-- MOBILNE MENU USŁUG -->
-             <button id="mobile-services-toggle" class="py-2 nav-link-gradient w-full text-left flex justify-between items-center">
+             <button id="mobile-services-toggle" class="py-2 nav-link-gradient w-full text-left flex justify-between items-center" aria-haspopup="true" aria-expanded="false">
                 <span>Usługi</span>
                 <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
              </button>
              <div id="mobile-services-links" class="pl-4 border-l-2 border-white/10">
                 <a href="usluga-strony-www.html" class="block py-2 nav-link-gradient opacity-80">Strony WWW</a>
-                <a href="usluga-branding.html" class="block py-2 nav-link-gradient opacity-80 font-bold">Branding i Grafika</a> <!-- Aktywna -->
-                <a href="usluga-seo.html" class="block py-2 nav-link-gradient opacity-80">SEO i Marketing</a>
+                <a href="usluga-branding.html" class="block py-2 nav-link-gradient opacity-80 font-bold">Branding i Grafika</a> <a href="usluga-seo.html" class="block py-2 nav-link-gradient opacity-80">SEO i Marketing</a>
              </div>
 
              <a href="index_refactored.html#portfolio" class="block py-2 nav-link-gradient">Projekty</a>
@@ -103,14 +86,10 @@
              <a href="cennik.html" class="block py-2 nav-link-gradient">Cennik</a>
              <a href="index_refactored.html#faq" class="block py-2 nav-link-gradient">FAQ</a>
              <a href="index_refactored.html#blog" class="block py-2 nav-link-gradient">Blog</a>
-             <!-- Zastąpiono "Kontakt" przez "Umów konsultację" (P20) -->
-             <a href="#calendly-placeholder" target="_blank" class="block py-2 nav-link-gradient font-bold">Umów konsultację</a>
+             <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="block py-2 nav-link-gradient font-bold">Umów konsultację</a>
         </div>
     </nav>
 
-    <!-- =================================================================== -->
-    <!-- ===================== SEKCJA HERO (PODSTRONA) ===================== -->
-    <!-- =================================================================== -->
     <header class="pt-32 pb-16 md:pt-40 md:pb-24 text-center overflow-hidden">
         <div class="container mx-auto px-6">
             <h1 class="text-4xl md:text-6xl font-black tracking-wider leading-tight">
@@ -120,19 +99,14 @@
             </h1>
             <div class="overflow-hidden">
                 <p class="text-lg md:text-xl secondary-text mt-4 max-w-2xl mx-auto hero-animate" style="animation-delay: 0.3s;">
-                    <!-- Zaktualizowany podtytuł, zgodny ze szkicem P7 -->
                     Wyróżnij się albo zgiń. Stwórzmy markę, którą pokochają Twoi klienci. Od strategii po Księgę Znaku.
                 </p>
             </div>
         </div>
     </header>
 
-    <!-- Główna treść podstrony -->
     <main class="container mx-auto px-6">
 
-        <!-- =================================================================== -->
-        <!-- =================== SEKCJA OPIS USŁUGI ========================== -->
-        <!-- =================================================================== -->
         <section id="opis" class="py-16 md:py-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                  <div class="w-full h-80 md:h-full rounded-lg bg-gray-700/50 animate-on-scroll animate-fade-in-left">
@@ -156,13 +130,8 @@
             </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- ====================== SEKCJA PROCES BRANDINGU (P7) ============== -->
-        <!-- =================================================================== -->
-        <section id="proces-brandingu" class="py-16 md:py-24 border-t border-white/10"> <!-- Dodano border-t -->
-             <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Nasz Proces <span class="nav-link-gradient">Brandingu</span></h2>
+        <section id="proces-brandingu" class="py-16 md:py-24 border-t border-white/10"> <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Nasz Proces <span class="nav-link-gradient">Brandingu</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Krok 1: Warsztat -->
                 <div class="process-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg">
                     <span class="process-number">01</span>
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
@@ -171,7 +140,6 @@
                     <h3 class="text-xl font-bold mt-6 z-10">Warsztat Strategiczny</h3>
                     <p class="secondary-text mt-2 flex-grow z-10">Musimy zrozumieć Twój biznes. Spotykamy się na 2-3 godziny (online lub w Radomiu), by 'wejść' w Twoją głowę i poznać Twoich idealnych klientów.</p>
                 </div>
-                <!-- Krok 2: Strategia -->
                 <div class="process-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 150ms;">
                     <span class="process-number">02</span>
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
@@ -180,7 +148,6 @@
                     <h3 class="text-xl font-bold mt-6 z-10">Strategia Marki</h3>
                     <p class="secondary-text mt-2 flex-grow z-10">Definiujemy 'osobowość' i archetyp marki. Analizujemy konkurencję, by znaleźć Twoje unikalne wyróżniki (USP).</p>
                 </div>
-                <!-- Krok 3: Projektowanie -->
                 <div class="process-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;">
                     <span class="process-number">03</span>
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
@@ -189,7 +156,6 @@
                     <h3 class="text-xl font-bold mt-6 z-10">Projektowanie</h3>
                     <p class="secondary-text mt-2 flex-grow z-10">Tworzymy 2-3 unikalne koncepcje logo i identyfikacji wizualnej, a nie 20 propozycji z generatora. Iterujemy na podstawie Twojego feedbacku.</p>
                 </div>
-                <!-- Krok 4: Wdrożenie -->
                 <div class="process-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 450ms;">
                     <span class="process-number">04</span>
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
@@ -201,11 +167,7 @@
             </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- =================== SEKCJA KSIĘGA ZNAKU (P7) ==================== -->
-        <!-- =================================================================== -->
-        <section id="ksiega-znaku" class="py-16 md:py-24 border-t border-white/10"> <!-- Dodano border-t -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <section id="ksiega-znaku" class="py-16 md:py-24 border-t border-white/10"> <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
                  <div class="md:order-last w-full h-80 md:h-full rounded-lg bg-gray-700/50 animate-on-scroll animate-fade-in-right">
                      
                     <img src="https://placehold.co/600x400/1C1C1C/E5E7EB?text=Księga+Znaku+(Brand+Book)"
@@ -227,13 +189,8 @@
             </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- =================== SEKCJA DLA KOGO? (Branding P7) ============== -->
-        <!-- =================================================================== -->
-        <section id="dla-kogo-branding" class="py-16 md:py-24 border-t border-white/10"> <!-- Dodano border-t -->
-             <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Dla kogo <span class="nav-link-gradient">jest ta usługa?</span></h2>
+        <section id="dla-kogo-branding" class="py-16 md:py-24 border-t border-white/10"> <h2 class="section-header text-center mb-16 animate-on-scroll animate-fade-in-down">Dla kogo <span class="nav-link-gradient">jest ta usługa?</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Karta 1 -->
                 <div class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg">
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -241,7 +198,6 @@
                     <h3 class="text-xl font-bold mt-6">Nowe Firmy i Startupy</h3>
                     <p class="secondary-text mt-2 flex-grow">Które chcą mocno wejść na rynek z profesjonalnym wizerunkiem od samego początku.</p>
                 </div>
-                <!-- Karta 2 -->
                 <div class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 150ms;">
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 00-15.357-2m15.357 2H15"></path></svg>
@@ -249,8 +205,7 @@
                     <h3 class="text-xl font-bold mt-6">Firmy Potrzebujące Rebrandingu</h3>
                     <p class="secondary-text mt-2 flex-grow">Których obecny wizerunek się zestarzał, przestał pasować do oferty lub źle się kojarzy.</p>
                 </div>
-                <!-- Karta 3 -->
-                 <div class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;">
+                <div class="service-card p-8 text-center flex flex-col items-center animate-on-scroll animate-fade-in-up rounded-lg" style="transition-delay: 300ms;">
                     <div class="icon-wrapper p-4 rounded-full" style="background-image: var(--gradient-main);">
                          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
                     </div>
@@ -261,23 +216,15 @@
         </section>
 
 
-        <!-- =================================================================== -->
-        <!-- =================== SEKCJA CTA DO KONTAKTU ====================== -->
-        <!-- =================================================================== -->
-        <section id="cta-kontakt" class="py-16 md:py-24 border-t border-white/10"> <!-- Dodano border-t -->
-            <div class="max-w-3xl mx-auto text-center animate-on-scroll animate-fade-in-up">
+        <section id="cta-kontakt" class="py-16 md:py-24 border-t border-white/10"> <div class="max-w-3xl mx-auto text-center animate-on-scroll animate-fade-in-up">
                 <h2 class="section-header">Gotowy, by Twoja marka <br><span class="nav-link-gradient">zaczęła pracować dla Ciebie?</span></h2>
                 <p class="text-lg secondary-text mt-6">
                     Niezależnie od tego, czy potrzebujesz tylko logo, czy kompleksowej strategii i identyfikacji wizualnej, jesteśmy gotowi pomóc. Umów się na rozmowę!
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <!-- Zaktualizowano link -->
-                    <a href="#calendly-placeholder" target="_blank" class="inline-block gradient-button rounded-md"> <!-- Link do Calendly (P20), dodano rounded-md -->
-                        Umów darmową konsultację brandingową
+                    <a href="#calendly-placeholder" target="_blank" rel="noopener noreferrer" class="inline-block gradient-button rounded-md"> Umów darmową konsultację brandingową
                     </a>
-                    <!-- Zaktualizowano link -->
-                    <a href="cennik.html#cennik-inne" class="inline-block outline-button rounded-md"> <!-- Link do Cennika (P10), dodano rounded-md -->
-                        Zobacz Pakiety Brandingowe
+                    <a href="cennik.html#cennik-inne" class="inline-block outline-button rounded-md"> Zobacz Pakiety Brandingowe
                     </a>
                  </div>
             </div>
@@ -285,34 +232,27 @@
 
     </main>
 
-    <!-- =================================================================== -->
-    <!-- ======================= SEKCJA STOPKI (FOOTER) ==================== -->
-    <!-- =================================================================== -->
     <footer class="py-8 md:py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
                  <div class="text-center md:text-left">
-                     <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <!-- Zaktualizowano Logo -->
-                     <p class="secondary-text text-sm mt-1">Agencja Kreatywna z Radomia</p>
+                     <a href="index_refactored.html" class="text-2xl font-bold tracking-wider logo">DrawLab</a> <p class="secondary-text text-sm mt-1">Agencja Kreatywna z Radomia</p>
                  </div>
                  <div class="flex gap-6">
                     <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                     <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                     <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Behance"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 5.5h-5c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM19.5 8h-2c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM24 3.5v11c0 0.827-0.673 1.5-1.5 1.5h-6.239c-0.42 0-0.741 0.453-0.575 0.842 0.654 1.536-0.301 2.658-1.186 2.658-0.692 0-1.782-0.844-1.782-2.901 0-2.316 2.029-4.099 4.282-4.099h3c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-3c-1.42 0-2.782 1.243-2.782 2.599 0 0.99 0.528 1.401 0.782 1.401 0.354 0 0.812-0.584 0.528-1.189-0.19-0.392 0.038-0.811 0.449-0.811h6.239c0.275 0 0.5-0.225 0.5-0.5v-11c0-0.275-0.225-0.5-0.5-0.5h-18c-0.275 0-0.5 0.225-0.5 0.5v17c0 0.275 0.225 0.5 0.5 0.5h8.5v-1c0-0.827 0.673-1.5 1.5-1.5s1.5 0.673 1.5 1.5v1h0.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5h-0.5v-1c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v1h-8.5c-0.827 0-1.5-0.673-1.5-1.5v-17c0-0.827 0.673-1.5 1.5-1.5h18c0.827 0 1.5 0.673 1.5 1.5zM12.25 12.501c-2.062 0-3.25-1.688-3.25-3.501 0-1.932 1.34-3.5 3.5-3.5s3.5 1.568 3.5 3.5c0 1.812-1.188 3.501-3.75 3.501zm0.25-6c-1.071 0-1.986 0.931-1.986 2.499 0 1.429 0.795 2.501 2.236 2.501 1.288 0 2.014-1.072 2.014-2.501 0-1.568-0.943-2.499-2.264-2.499z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Behance"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 5.5h-5c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h5c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM19.5 8h-2c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h2c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5zM24 3.5v11c0 0.827-0.673 1.5-1.5 1.5h-6.239c-0.42 0-0.741 0.453-0.575 0.842 0.654 1.536-0.301 2.658-1.186 2.658-0.692 0-1.782-0.844-1.782-2.901 0-2.316 2.029-4.099 4.282-4.099h3c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-3c-1.42 0-2.782 1.243-2.782 2.599 0 0.99 0.528 1.401 0.782 1.401 0.354 0 0.812-0.584 0.528-1.189-0.19-0.392 0.038-0.811 0.449-0.811h6.239c0.275 0 0.5-0.225 0.5-0.5v-11c0-0.275-0.225-0.5-0.5-0.5h-18c-0.275 0-0.5 0.225-0.5 0.5v17c0 0.275 0.225 0.5 0.5 0.5h8.5v-1c0-0.827 0.673-1.5 1.5-1.5s1.5 0.673 1.5 1.5v1h0.5c0.276 0 0.5-0.224 0.5-0.5s-0.224-0.5-0.5-0.5h-0.5v-1c0-1.379-1.121-2.5-2.5-2.5s-2.5 1.121-2.5 2.5v1h-8.5c-0.827 0-1.5-0.673-1.5-1.5v-17c0-0.827 0.673-1.5 1.5-1.5h18c0.827 0 1.5 0.673 1.5 1.5zM12.25 12.501c-2.062 0-3.25-1.688-3.25-3.501 0-1.932 1.34-3.5 3.5-3.5s3.5 1.568 3.5 3.5c0 1.812-1.188 3.501-3.75 3.501zm0.25-6c-1.071 0-1.986 0.931-1.986 2.499 0 1.429 0.795 2.501 2.236 2.501 1.288 0 2.014-1.072 2.014-2.501 0-1.568-0.943-2.499-2.264-2.499z"/></svg></a>
                  </div>
             </div>
             <div class="mt-8 pt-8 border-t border-white/10 text-center footer-text text-sm">
-                 <p>&copy; 2025 DrawLab. Wszelkie prawa zastrzeżone. | <a href="#" class="hover:underline">Polityka Prywatności</a></p> <!-- TODO: Link do P26 -->
-            </div>
+                 <p>&copy; 2025 DrawLab. Wszelkie prawa zastrzeżone. | <a href="#" class="hover:underline">Polityka Prywatności</a></p> </div>
         </div>
     </footer>
 
-    <!-- BANNER COOKIE -->
     <div id="cookie-consent-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:w-auto z-[9998] p-6 glass-effect rounded-lg shadow-2xl">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
             <p class="text-sm secondary-text text-center md:text-left">
-                Ta strona wykorzystuje pliki cookie, aby zapewnić Ci najlepsze doświadczenia. Kontynuując, zgadzasz się na naszą <a href="#" class="underline hover:text-white">politykę prywatności</a>. <!-- TODO: Link do P26 -->
-            </p>
+                Ta strona wykorzystuje pliki cookie, aby zapewnić Ci najlepsze doświadczenia. Kontynuując, zgadzasz się na naszą <a href="#" class="underline hover:text-white">politykę prywatności</a>. </p>
             <div class="flex gap-4 flex-shrink-0">
                 <button id="accept-cookies" class="gradient-button !px-6 !py-2 !text-sm rounded-md">Akceptuj</button>
                 <button id="decline-cookies" class="outline-button !px-6 !py-2 !text-sm rounded-md">Odrzuć</button>
@@ -320,10 +260,8 @@
         </div>
     </div>
 
-    <!-- SKRYPTY JAVASCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 
 </body>
 </html>
-
