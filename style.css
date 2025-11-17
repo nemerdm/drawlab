@@ -736,6 +736,19 @@ html.light-theme .mega-menu-item:hover {
 /* ------------------------------------------------------------------- */
 /* 13. STYLE FORMULARZA WIELOETAPOWEGO (P18)
 /* ------------------------------------------------------------------- */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.form-step-invalid {
+    animation: shake 0.5s ease-in-out;
+}
+
+.form-invalid {
+    border-color: #ef4444 !important; /* red-500 */
+}
 /* ZMIANA (WCAG): Zastąpiono 'display: none' na 'visibility: hidden' i 'position: absolute'.
 'display: none' usuwa element z drzewa dostępności, co jest złe.
 'visibility: hidden' ukrywa go, ale zachowuje w drzewie, a 'position: absolute'

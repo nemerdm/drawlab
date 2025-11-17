@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             preloader.classList.add('hidden');
         }, 500);
     });
-    
+
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     const body = document.querySelector('body');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
     if (cursorDot && cursorOutline && !isTouchDevice) {
-        
+
         // Aktywuj ukrywanie kursora systemowego TYLKO na desktopie
         body.classList.add('js-cursor-active');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorOutline.style.top = `${outlineY}px`;
             requestAnimationFrame(animateCursor);
         };
-        
+
         requestAnimationFrame(animateCursor); // Uruchom animację
 
         // Listenery 'interact' i 'visibility' również opakowujemy w warunek
@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseleave', () => body.classList.remove('cursor-interact'));
         });
 
-    } 
+    }
     // KONIEC ZMIANY (Mobile UX Kursor)
-    
+
 
     const themeToggleBtn = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
             const isHidden = mobileMenu.classList.toggle('hidden');
@@ -128,39 +128,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const logos = [
     "html5", "css", "javascript", "react", "tailwindcss", "nextdotjs", "git", "github", "wordpress", "woocommerce", "php", "typescript",
     ];
-    const allLogos = [...logos, ...logos]; 
+    const allLogos = [...logos, ...logos];
     if(sliderTrack) {
-        sliderTrack.innerHTML = ''; 
+        sliderTrack.innerHTML = '';
         allLogos.forEach(logo => {
             const slide = document.createElement('div');
             slide.className = 'slide';
             const img = document.createElement('img');
-            img.src = `https://cdn.simpleicons.org/${logo.replace('_','').replace('w3','')}`; 
+            img.src = `https://cdn.simpleicons.org/${logo.replace('_','').replace('w3','')}`;
             img.alt = logo.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
             img.title = logo.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
             img.className = 'tech-logo';
-            img.onerror = () => { img.style.display = 'none'; }; 
+            img.onerror = () => { img.style.display = 'none'; };
             slide.appendChild(img);
             sliderTrack.appendChild(slide);
         });
     }
-    
+
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach((item, index) => {
         const question = item.querySelector('.faq-question');
         const answer = item.querySelector('.faq-answer');
-        
+
         const answerId = `faq-answer-${index}`;
-        if (answer) { 
+        if (answer) {
             answer.setAttribute('id', answerId);
             question.setAttribute('aria-controls', answerId);
         }
-        question.setAttribute('aria-expanded', 'false'); 
+        question.setAttribute('aria-expanded', 'false');
 
         question.addEventListener('click', () => {
             const isOpen = item.classList.contains('open');
-            
+
             faqItems.forEach(i => {
                 i.classList.remove('open');
                 i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
@@ -174,11 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const contactForm = document.getElementById('contact-form'); 
-    const formWrapper = document.getElementById('contact-form-wrapper'); 
-    const successMessage = document.getElementById('success-message'); 
-    
-    if (contactForm && formWrapper && successMessage) { 
+    const contactForm = document.getElementById('contact-form');
+    const formWrapper = document.getElementById('contact-form-wrapper');
+    const successMessage = document.getElementById('success-message');
+
+    if (contactForm && formWrapper && successMessage) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             formWrapper.style.transition = 'opacity 0.5s ease';
@@ -186,30 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 formWrapper.classList.add('hidden');
                 successMessage.classList.remove('hidden');
-                successMessage.style.opacity = '1'; 
+                successMessage.style.opacity = '1';
             }, 500);
         });
     }
 
     const progressBar = document.getElementById('scroll-progress-bar');
-    let isScrolling = false; 
-    
+    let isScrolling = false;
+
     window.addEventListener('scroll', () => {
-        if (!isScrolling && progressBar) { 
+        if (!isScrolling && progressBar) {
             window.requestAnimationFrame(() => {
                 const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                
+
                 if (scrollHeight > 0) {
                     const scrollPercent = (scrollTop / scrollHeight) * 100;
                     progressBar.style.width = `${scrollPercent}%`;
                 } else {
-                    progressBar.style.width = `0%`; 
+                    progressBar.style.width = `0%`;
                 }
-                
-                isScrolling = false; 
+
+                isScrolling = false;
             });
-            isScrolling = true; 
+            isScrolling = true;
         }
     });
 
@@ -217,36 +217,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitles = [
         "Kreatywny Developer",
         "Grafik Komputerowy",
-        "Specjalista SEO" 
+        "Specjalista SEO"
     ];
     let subtitleIndex = 0;
     const subtitleElement = document.getElementById('animated-subtitle');
-    
+
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    if (subtitleElement && !mediaQuery.matches) { 
+    if (subtitleElement && !mediaQuery.matches) {
         const changeSubtitle = () => {
              subtitleIndex = (subtitleIndex + 1) % subtitles.length;
             subtitleElement.style.opacity = '0';
             setTimeout(() => {
                 subtitleElement.textContent = subtitles[subtitleIndex];
                 subtitleElement.style.opacity = '1';
-            }, 400); 
+            }, 400);
         };
-        changeSubtitle(); 
-        setInterval(changeSubtitle, 3000); 
+        changeSubtitle();
+        setInterval(changeSubtitle, 3000);
     } else if (subtitleElement) {
-        subtitleElement.style.opacity = '1'; 
+        subtitleElement.style.opacity = '1';
     }
 
 
-    const tiltImages = document.querySelectorAll('#about-me-image'); 
-    if(tiltImages.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) { 
+    const tiltImages = document.querySelectorAll('#about-me-image');
+    if(tiltImages.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         VanillaTilt.init(tiltImages, {
-            max: 8, 
-            speed: 600, 
+            max: 8,
+            speed: 600,
             glare: true,
-            "max-glare": 0.3 
+            "max-glare": 0.3
         });
     }
 
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
         }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure"; 
+        document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
     };
 
     const getCookie = (name) => {
@@ -280,22 +280,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!getCookie('cookie_consent')) {
             setTimeout(() => {
                 cookieBanner.classList.add('show');
-            }, 1500); 
+            }, 1500);
         }
 
         acceptCookiesBtn.addEventListener('click', () => {
             setCookie('cookie_consent', 'accepted', 365);
             cookieBanner.classList.remove('show');
-            console.log("Cookies accepted."); 
+            console.log("Cookies accepted.");
         });
 
         declineCookiesBtn.addEventListener('click', () => {
-            setCookie('cookie_consent', 'declined', 365); 
+            setCookie('cookie_consent', 'declined', 365);
             cookieBanner.classList.remove('show');
             console.log("Cookies declined.");
         });
     }
-    
+
     // --- Logika formularza wieloetapowego ---
     const multiStepForm = document.getElementById('multi-step-form');
     if (multiStepForm) {
@@ -304,9 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevBtns = multiStepForm.querySelectorAll('.prev-btn');
         const progressBar = multiStepForm.querySelector('#progress-bar');
         const progressText = multiStepForm.querySelector('#progress-text');
-        
-        const briefFormWrapper = document.getElementById('brief-form-wrapper'); 
-        const successBriefMessage = briefFormWrapper ? briefFormWrapper.querySelector('#success-message') : null; 
+
+        const briefFormWrapper = document.getElementById('brief-form-wrapper');
+        const successBriefMessage = briefFormWrapper ? briefFormWrapper.querySelector('#success-message') : null;
 
         let currentStep = 0;
         const totalSteps = steps.length;
@@ -324,14 +324,36 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => {
                 const inputs = steps[currentStep].querySelectorAll('[required]');
                 let isValid = true;
+
                 inputs.forEach(input => {
+                    let parentLabel = input.closest('label');
+                    if (parentLabel) {
+                        parentLabel.classList.remove('form-invalid');
+                    }
+
                     if (input.type === 'radio' || input.type === 'checkbox') {
                         const groupName = input.name;
                         if (!multiStepForm.querySelector(`input[name="${groupName}"]:checked`)) {
                             isValid = false;
+                            // Add invalid class to all labels in the group
+                            multiStepForm.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+                                let radioParentLabel = radio.closest('label');
+                                if (radioParentLabel) {
+                                    radioParentLabel.classList.add('form-invalid');
+                                }
+                            });
                         }
                     } else if (!input.value) {
                         isValid = false;
+                        if (parentLabel) {
+                            parentLabel.classList.add('form-invalid');
+                        }
+                        input.classList.add('form-invalid');
+                    } else {
+                        if (parentLabel) {
+                            parentLabel.classList.remove('form-invalid');
+                        }
+                        input.classList.remove('form-invalid');
                     }
                 });
 
@@ -339,7 +361,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentStep++;
                     updateStepDisplay();
                 } else if (!isValid) {
-                    // alert('Proszę wypełnić wymagane pola.'); 
+                    steps[currentStep].classList.add('form-step-invalid');
+                    setTimeout(() => {
+                        steps[currentStep].classList.remove('form-step-invalid');
+                    }, 500);
                 }
             });
         });
@@ -367,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isValid) {
                 console.log('Formularz wysłany:', new FormData(multiStepForm));
-                
+
                 if (briefFormWrapper && successBriefMessage) {
                     multiStepForm.style.transition = 'opacity 0.5s ease';
                     multiStepForm.style.opacity = '0';
@@ -382,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        if(steps.length > 0) { 
+        if(steps.length > 0) {
             updateStepDisplay();
         }
     }
