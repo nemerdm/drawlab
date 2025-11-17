@@ -126,8 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sliderTrack = document.getElementById('slider-track');
     const logos = [
-        "figma", "blender", "adobe_photoshop", "w3_html5", 
-        "css3", "javascript", "react", "tailwindcss"
+    "html5", "css", "javascript", "react", "tailwindcss", "nextdotjs", "git", "github", "wordpress", "woocommerce", "php", "typescript",
     ];
     const allLogos = [...logos, ...logos]; 
     if(sliderTrack) {
@@ -423,5 +422,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('Swiper JS nie został załadowany.');
     }
+
 
 });
