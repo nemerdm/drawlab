@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderTrack = document.getElementById('slider-track');
     const logos = [
         "figma", "blender", "adobe_photoshop", "w3_html5", 
-        "w3_css", "javascript", "reactjs", "tailwindcss"
+        "css3", "javascript", "react", "tailwindcss"
     ];
     const allLogos = [...logos, ...logos]; 
     if(sliderTrack) {
